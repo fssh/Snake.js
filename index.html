@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>贪食蛇——原生js实现</title>
+    <meta author="fsh" qq="741691336" weixin="忘我之鱼" />
+    <style type="text/css">
+    body {
+        font-family: 'Microsoft Yahei', '微软雅黑';
+        text-align: center;
+        background-color: #009944;
+        background-image: linear-gradient(135deg, #78b92c 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #78b92c 75%), linear-gradient(45deg, #78b92c 25%, transparent 25%), linear-gradient(135deg, transparent 75%, #78b92c 75%);
+        background-size: 40px 40px;
+        background-position: 0 0, 0 0, 0 0, 0 0;
+        animation: dazzled 4s linear 0s both infinite;
+    }
+    
+    @keyframes dazzled {
+        to {
+            background-position: 40px -40px, 40px -40px, -40px 40px, -40px 40px;
+        }
+    }
+    
+    h1 {
+        color: red;
+        letter-spacing: .5em;
+        text-shadow: 2px 2px 0px #fff200, 1px 1px 4px #fff200;
+    }
+    
+    #score,
+    #control {
+        font-size: 18px;
+        color: #12499c;
+    }
+    
+    #score b {
+        color: red;
+    }
+    
+    #cvs {
+        border: 3px solid #666;
+    }
+    </style>
+</head>
+
+<body>
+    <audio id="m_great" preload>
+        <source src="great.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="m_over" preload>
+        <source src="over.mp3" type="audio/mpeg" />
+    </audio>
+    <h1>贪食蛇</h1>
+    <div id="score">第<strong>1</strong>关&nbsp;&nbsp;分数: <strong>0</strong></div>
+    <canvas id="cvs" width="300" height="300"></canvas>
+    <div id="control">游戏控制：左=[A|←]；上=[W|↑]；右=[D|→]；下=[S|↓]，[暂停|重起]=[enter|space]</div>
+    <script type="text/javascript" src="snake.js"></script>
+</body>
+
+</html>
