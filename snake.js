@@ -152,8 +152,8 @@ var game = new function() {
                     if (over) { //游戏结束就重启
                         level = 1;
                         score = 0;
-                        speed = 1000 / 2,
-                            scoreDiv.innerHTML = "第<strong>" + level + "</strong>关&nbsp;&nbsp;分数: <strong>" + score + "</strong";
+                        speed = 1000 / 2;
+                        scoreDiv.innerHTML = "第<strong>" + level + "</strong>关&nbsp;&nbsp;分数: <strong>" + score + "</strong";
                         snake.init();
                         over = false;
                         game.loop(true);
