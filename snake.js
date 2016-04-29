@@ -72,7 +72,7 @@ var game = new function() {
         m_over = document.getElementById("m_over"),
         level = 1,
         score = 0,
-        scorePerLevel=5,
+        scorePerLevel=50,
         speed = 1000 / 2,
         timer = null,
         scoreDiv = document.getElementById("score"),
@@ -202,7 +202,7 @@ var game = new function() {
             snakeNodes.push(snake.tail);
             //计分
             score += 10;
-            level = (score / scorePerLevel >> 0) + 1;
+            level = ((score / scorePerLevel) >> 0) + 1;
             //加速
             speed-=level;
             //更新dom
