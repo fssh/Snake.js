@@ -72,7 +72,7 @@ var game = new function() {
         m_over = document.getElementById("m_over"),
         level = 1,
         score = 0,
-        scorePerLevel=50,
+        scorePerLevel = 50,
         speed = 1000 / 2,
         timer = null,
         scoreDiv = document.getElementById("score"),
@@ -153,7 +153,7 @@ var game = new function() {
                         level = 1;
                         score = 0;
                         speed = 1000 / 2,
-                        scoreDiv.innerHTML = "第<strong>" + level + "</strong>关&nbsp;&nbsp;分数: <strong>" + score + "</strong";
+                            scoreDiv.innerHTML = "第<strong>" + level + "</strong>关&nbsp;&nbsp;分数: <strong>" + score + "</strong";
                         snake.init();
                         over = false;
                         game.loop(true);
@@ -202,9 +202,9 @@ var game = new function() {
             snakeNodes.push(snake.tail);
             //计分
             score += 10;
-            level = ((score / scorePerLevel) >> 0) + 1;
+            level = (score / scorePerLevel >> 0) + 1;
             //加速
-            speed-=level;
+            speed -= level;
             //更新dom
             scoreDiv.innerHTML = "第<strong>" + level + "</strong>关&nbsp;&nbsp;分数: <strong>" + score + "</strong>";
         }
