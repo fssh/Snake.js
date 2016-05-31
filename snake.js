@@ -113,7 +113,7 @@ var game = new function() {
                 x = Math.floor(width * Math.random() / obj.size) * obj.size;
                 y = Math.floor(height * Math.random() / obj.size) * obj.size;
             }
-            while (x == obj.x && y == obj.y && checkRatSnakeCollision());
+            while (x == obj.x && y == obj.y || checkRatSnakeCollision());
             obj.x = x, obj.y = y;
         },
         keydown = function(event) {
