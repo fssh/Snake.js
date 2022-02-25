@@ -96,9 +96,9 @@ var game = new function() {
             ctx.strokeStyle = "#fff";
             ctx.strokeRect(obj.x, obj.y, obj.size, obj.size);
         },
-        checkRatSnakeCollision = function() { //鼠蛇相撞检测
+        checkRatSnakeCollision = function(obj = rat) { //物体与蛇相撞检测（默认检测鼠）
             for (var i = snakeNodes.length; i--;) {
-                if (snakeNodes[i].x == rat.x && snakeNodes[i].y == rat.y) {
+                if (snakeNodes[i].x == obj.x && snakeNodes[i].y == obj.y) {
                     return true;
                 }
             }
@@ -113,7 +113,7 @@ var game = new function() {
                 x = Math.floor(width * Math.random() / obj.size) * obj.size;
                 y = Math.floor(height * Math.random() / obj.size) * obj.size;
             }
-            while (x == obj.x && y == obj.y || checkRatSnakeCollision());
+            while (x == obj.x && y == obj.y || checkRatSnakeCollision({ x, y }));
             obj.x = x, obj.y = y;
         },
         keydown = function(event) {
